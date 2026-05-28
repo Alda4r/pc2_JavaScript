@@ -1,3 +1,45 @@
 <div class="pregunta-page">
-  aqui ira pregunta 1
+  <h2>Simulación backend: procesar notas</h2>
+
+  <form class="form-card" (submit)="$event.preventDefault(); submit(nombres.value, nota1.value, nota2.value, nota3.value, nota4.value); clearInputs(nombres, nota1, nota2, nota3, nota4)">
+    <div class="form-grid">
+      <div class="field full">
+        <label for="nombres">Nombres</label>
+        <input id="nombres" #nombres type="text" placeholder="Nombre completo" />
+      </div>
+
+      <div class="field">
+        <label for="nota1">Nota 1</label>
+        <input id="nota1" #nota1 type="number" min="0" max="20" step="1" placeholder="0 - 20" />
+      </div>
+      <div class="field">
+        <label for="nota2">Nota 2</label>
+        <input id="nota2" #nota2 type="number" min="0" max="20" step="1" placeholder="0 - 20" />
+      </div>
+      <div class="field">
+        <label for="nota3">Nota 3</label>
+        <input id="nota3" #nota3 type="number" min="0" max="20" step="1" placeholder="0 - 20" />
+      </div>
+      <div class="field">
+        <label for="nota4">Nota 4</label>
+        <input id="nota4" #nota4 type="number" min="0" max="20" step="1" placeholder="0 - 20" />
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-primary" type="submit">Procesar</button>
+      <button type="button" class="btn-secondary" (click)="clear(nombres, nota1, nota2, nota3, nota4)">Limpiar</button>
+    </div>
+  </form>
+
+  <div class="response-card" *ngIf="hasResult || error">
+    <h3>Resultado</h3>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <div *ngIf="hasResult" class="result-grid">
+      <div><strong>Suma</strong><div>{{ sumaResult }}</div></div>
+      <div><strong>Promedio</strong><div>{{ promedioResult }}</div></div>
+      <div><strong>Estado</strong><div>{{ estadoResult }}</div></div>
+      <div class="observacion"><strong>Observación</strong><div>{{ observacionResult }}</div></div>
+    </div>
+  </div>
 </div>

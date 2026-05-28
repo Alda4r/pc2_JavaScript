@@ -1,4 +1,18 @@
 .pregunta-page {
-  padding: 2rem;
-  font-size: 1.25rem;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+  color: #0f172a;
 }
+
+input, button {
+  font: inherit;
+}
+
+button {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #334155;
+  background: white;
+  cursor: pointer;
+}
+
+

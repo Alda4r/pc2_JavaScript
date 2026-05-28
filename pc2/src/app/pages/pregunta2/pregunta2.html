@@ -1,3 +1,46 @@
 <div class="pregunta-page">
-  aqui ira pregunta 2
+  <h2>Calcular IMC</h2>
+
+  <form #imcForm="ngForm" (ngSubmit)="send(imcForm)">
+    <div>
+      <label for="nombre">Nombre</label>
+      <input id="nombre" name="nombre" type="text" [(ngModel)]="nombre" required minlength="3" />
+      <div *ngIf="errorNombre">{{ errorNombre }}</div>
+    </div>
+
+    <div>
+      <label for="correo">Correo</label>
+      <input id="correo" name="correo" type="email" [(ngModel)]="correo" required />
+      <div *ngIf="errorCorreo">{{ errorCorreo }}</div>
+    </div>
+
+    <div>
+      <label for="peso">Peso (kg)</label>
+      <input id="peso" name="peso" type="number" [(ngModel)]="peso" required min="10" max="300" step="0.1" />
+      <div *ngIf="errorPeso">{{ errorPeso }}</div>
+    </div>
+
+    <div>
+      <label for="altura">Altura (m) (ej. 1.90 o 190)</label>
+      <input id="altura" name="altura" type="number" [(ngModel)]="altura" required min="0.5" max="250" step="0.01" />
+      <div *ngIf="errorAltura">{{ errorAltura }}</div>
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div *ngIf="hasResult">
+    <p>Resultado:</p>
+    <ul>
+      <li>IMC: {{ imc }}</li>
+      <li>Categoría: {{ categoria }}</li>
+    </ul>
+  </div>
+
+  <div class="popup-backdrop" *ngIf="popupVisible" (click)="closePopup()">
+    <div class="popup-window" (click)="$event.stopPropagation()">
+      <p>{{ popupMessage }}</p>
+      <button type="button" (click)="closePopup()">Cerrar</button>
+    </div>
+  </div>
 </div>
