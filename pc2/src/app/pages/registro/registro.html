@@ -1,0 +1,56 @@
+<section class="registro">
+  <h2>Registro de Producto</h2>
+
+  <p class="descripcion">
+    Complete el formulario para simular el registro de un nuevo producto.
+  </p>
+
+  <form class="formulario" (ngSubmit)="guardarProducto()">
+    <label for="nombre">Nombre del producto</label>
+    <input
+      id="nombre"
+      type="text"
+      name="nombre"
+      [(ngModel)]="nombre"
+      placeholder="Ejemplo: Teclado mecánico">
+
+    <label for="categoria">Categoría</label>
+    <input
+      id="categoria"
+      type="text"
+      name="categoria"
+      [(ngModel)]="categoria"
+      placeholder="Ejemplo: Accesorios">
+
+    <label for="precio">Precio</label>
+    <input
+      id="precio"
+      type="number"
+      name="precio"
+      [(ngModel)]="precio"
+      placeholder="Ejemplo: 150">
+
+    <label for="stock">Stock</label>
+    <input
+      id="stock"
+      type="number"
+      name="stock"
+      [(ngModel)]="stock"
+      placeholder="Ejemplo: 20">
+
+    <div class="botones">
+      <button type="submit">Guardar</button>
+      <button type="button" class="secundario" (click)="limpiarFormulario()">
+        Limpiar
+      </button>
+    </div>
+  </form>
+  <div class="vista-previa" *ngIf="productoRegistrado">
+    <h3>Vista previa del producto registrado</h3>
+
+    <p><strong>Nombre:</strong> {{ nombre | uppercase }}</p>
+    <p><strong>Categoría:</strong> {{ categoria }}</p>
+    <p><strong>Precio:</strong> {{ precio | currency:'PEN':'symbol':'1.2-2' }}</p>
+    <p><strong>Stock:</strong> {{ stock }}</p>
+  </div>
+</section>

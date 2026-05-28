@@ -1,0 +1,66 @@
+.registro h2 {
+  color: #1f4e79;
+}
+
+.descripcion {
+  color: #555;
+}
+
+.formulario {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.formulario label {
+  font-weight: bold;
+  color: #333;
+}
+
+.formulario input {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.botones {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #1f4e79;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #163a5a;
+}
+
+.secundario {
+  background-color: #6c757d;
+}
+
+.secundario:hover {
+  background-color: #545b62;
+}
+
+.vista-previa {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #d6e4f0;
+  background-color: #f0f6fb;
+}
+
+.vista-previa h3 {
+  color: #1f4e79;
+}

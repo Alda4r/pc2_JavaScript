@@ -1,0 +1,28 @@
+<section class="productos">
+  <h2>Listado de Productos</h2>
+
+  <p class="descripcion">
+    En esta sección se muestran productos registrados en el sistema.
+    Se aplican pipes para formatear texto, moneda y fechas.
+  </p>
+
+  <div class="grid-productos">
+    <div class="card-producto" *ngFor="let producto of productos">
+      <h3>{{ producto.nombre | uppercase }}</h3>
+
+      <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
+
+      <p>
+        <strong>Precio:</strong>
+        {{ producto.precio | currency:'PEN':'symbol':'1.2-2' }}
+      </p>
+
+      <p>
+        <strong>Fecha de registro:</strong>
+        {{ producto.fechaRegistro | date:'dd/MM/yyyy' }}
+      </p>
+
+      <p><strong>Stock disponible:</strong> {{ producto.stock }}</p>
+    </div>
+  </div>
+</section>
